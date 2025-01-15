@@ -4,7 +4,7 @@ app = FastAPI(title="Ping-Pong API")
 
 @app.get("/ping")
 async def ping():
-    return {"message": "pong"}
+    return {"message": "pong", "time": datetime.now().isoformat()}
 
 if __name__ == "__main__":
     import uvicorn
