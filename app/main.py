@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from datetime import datetime
 
 app = FastAPI(title="Ping-Pong API")
 
@@ -6,6 +7,9 @@ app = FastAPI(title="Ping-Pong API")
 async def ping():
     return {"message": "pong", "time": datetime.now().isoformat()}
 
-if __name__ == "__main__":
+def start_application():
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000) 
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+if __name__ == "__main__":
+    start_application() 
